@@ -1,0 +1,52 @@
+* {
+    display: block;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: monospace;
+    font-size: 100%;
+    font-weight: normal;
+    white-space: normal;
+    line-height: 1.3;
+    color: white;
+}
+
+body {
+    white-space: pre-line;
+}
+
+/* Display the Opening and Closing tags of elements */
+/* important elements */
+html::before { content: "<!DOCTYPE html>\A<html lang=\"" attr(lang) '\">'; white-space: pre; }
+html::after  { content: '</html>'; }
+head::before { content: '<head>';  }
+head::after { content: '</head>';  }
+body::before { content: '<body>';  }
+body::after { content: '</body>';  }
+
+/* Meta Tags */
+meta[charset]::before { content: "<meta charset=\"" attr(charset) "\">"; }
+meta[name="viewport"]::before { content: "<meta name=\"viewport\" content=\"" attr(content) "\">"; }
+title::before{ content: '<title>'; }
+title::after{ content: '</title>'; }
+link[rel="stylesheet"]::before { content: "<link rel=\"stylesheet\" href=\"" attr(href) "\">"; }
+
+/* Body Tags */
+section::before { content: '<section>'; }
+section::after { content: '</section>'; padding-left: 20px; } 
+h1::before { content: '<h1>'; }
+h1::after { content: '</h1>'; }
+h3::before { content: '<h3>'; }
+h3::after { content: '</h3>'; }
+p::before { content: '<p>'; }
+p::after { content: '</p>'; }
+a::before { content: "<a href='" attr(href) "'>"; }
+a::after { content: '</a>'; }
+
+
+/* Formatting the output */
+html { margin: 10px 20px; }
+body { background-color: black; }
+head *, body * { text-indent: 20px; }
+section * { text-indent: 40px; }
+a { display: inline; }
