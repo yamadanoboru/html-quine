@@ -11,10 +11,6 @@
     color: white;
 }
 
-body {
-    white-space: pre-line;
-}
-
 /* Display the Opening and Closing tags of elements */
 /* important elements */
 html::before { content: "<!DOCTYPE html>\A<html lang=\"" attr(lang) '\">'; white-space: pre; }
